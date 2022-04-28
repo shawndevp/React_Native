@@ -1,5 +1,7 @@
 import { StatusBar } from "expo-status-bar";
+import { useDimensions, useDeviceOrientation } from "@react-native-community/hooks";
 import {
+  Dimensions,
   StyleSheet,
   Text,
   Image,
@@ -7,14 +9,21 @@ import {
   SafeAreaView,
   Button,
   Alert,
+  View,
 } from "react-native";
 
 export default function App() {
   const handlePress = () => console.log("text pressed");
   // console.log(require('./assets/icon.png'))
+  console.log(Dimensions.get('screen'))
+  console.log(useDeviceOrientation());  
+  const {landscape} = useDeviceOrientation();
 
   return (
     <SafeAreaView style={styles.container}>
+      <View
+        style={{ backgroundColor: "dodgerblue", width: '50%', height: landscape ? '100%' : 70, }}
+      ></View>
       <Text numberOfLines={1} onPress={handlePress}>
         Hello World! Lorem Ipsum is simply dummy text of the printing and
         typesetting industry. Lorem Ipsum has been the industry's standard dummy
@@ -30,7 +39,9 @@ export default function App() {
           //   { text: "Good", onPress: () => console.log("Good Pressed") },
           //   { text: "Bad", onPress: () => console.log("Bad Pressed") },
           // ])
-          Alert.prompt('Tell me something funny', 'Message', msg => console.log(msg) )
+          Alert.prompt("Tell me something funny", "Message", (msg) =>
+            console.log(msg)
+          )
         }
       />
       <StatusBar style="auto" />
