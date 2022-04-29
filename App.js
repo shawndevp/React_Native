@@ -14,13 +14,14 @@ import {
   Alert,
   View,
 } from "react-native";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 export default function App() {
-  const handlePress = () => console.log("text pressed");
-  // console.log(require('./assets/icon.png'))
-  console.log(Dimensions.get("screen"));
-  console.log(useDeviceOrientation());
-  const { landscape } = useDeviceOrientation();
+  // const handlePress = () => console.log("text pressed");
+  // // console.log(require('./assets/icon.png'))
+  // console.log(Dimensions.get("screen"));
+  // console.log(useDeviceOrientation());
+  // const { landscape } = useDeviceOrientation();
 
   return (
     // <SafeAreaView style={styles.container}>
@@ -32,7 +33,7 @@ export default function App() {
     //     typesetting industry. Lorem Ipsum has been the industry's standard dummy
     //   </Text>
     //   <TouchableOpacity onPress={() => console.log("image tapped!")}>
-    //     <Image blurRadius={1} source={require("./assets/favicon.png")} />
+    //     <Image blurRadius={1} source={require("./app/assets/favicon.png")} />
     //   </TouchableOpacity>
     //   <Button
     //     color="orange"
@@ -50,20 +51,26 @@ export default function App() {
     //   <StatusBar style="auto" />
     // </SafeAreaView>
 
-    <View
-      style={{
-        backgroundColor: "#fff",
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <View style={{ backgroundColor: "dodgerblue", width: 100, height: 300,}} />
-      <View style={{ backgroundColor: "gold", width: 100, height: 200, }} />
-      <View style={{ backgroundColor: "tomato",width: 100, height: 100,}} />
+    // <View
+    //   style={{
+    //     backgroundColor: "#fff",
+    //     flex: 1,
+    //     flexDirection: 'row',
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     alignContent: 'center',
+    //     flexWrap: 'wrap',
+    //   }}
+    // >
+    //   <View style={{ backgroundColor: "dodgerblue", width: 100, height: 100,}} />
+    //   <View style={{ backgroundColor: "gold", width: 100, height: 100, }} />
+    //   <View style={{ backgroundColor: "tomato",width: 100, height: 100,}} />
+    //   <View style={{ backgroundColor: "grey",width: 100, height: 100,}} />
 
-    </View>
+
+    // </View>
+    
+    <WelcomeScreen />
 
   );
 }
